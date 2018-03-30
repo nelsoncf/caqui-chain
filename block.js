@@ -6,24 +6,24 @@ class Block {
         this.data = data;
     }
 
-    toString(){
+    toString() {
         return `Block - 
             Timestamp: ${this.timestamp}
-            Lasthash : ${this.lasthash.substring(0,10)}
-            Hash     : ${this.hash.substring(0,10)}
+            Lasthash : ${this.lasthash.substring(0, 10)}
+            Hash     : ${this.hash.substring(0, 10)}
             Data     : ${this.data}
         `
     }
 
-    static genesis(){
-        return new this('The Beginning of the Caqui',  '----', 'f1r57-h', []);
+    static genesis() {
+        return new this('The Beginning of the Caqui', '----', 'f1r57-h', []);
     }
 
-    static mineBlock(lastblock, data){
+    static mineBlock(lastblock, data) {
         const timestamp = Date.now();
         const lastHash = lastblock.hash;
         const hash = 'hue';
-        
+
         return new this(timestamp, lastHash, hash, data);
 
     }
