@@ -14,6 +14,20 @@ class Block {
             Data     : ${this.data}
         `
     }
+
+    static genesis(){
+        return new this('The Beginning of the Caqui',  '----', 'f1r57-h', []);
+    }
+
+    static mineBlock(lastblock, data){
+        const timestamp = Date.now();
+        const lastHash = lastblock.hash;
+        const hash = 'hue';
+        
+        return new this(timestamp, lastHash, hash, data);
+
+    }
+
 }
 
 module.exports = Block;
